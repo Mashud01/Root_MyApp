@@ -28,12 +28,11 @@ class _CustomeCarouselHomePageState extends State<CustomeCarouselHomePage> {
         Container(
           width: MediaQuery.of(context).size.width,
           child: CarouselSlider(
-            onPageChanged: (index) {
-              setActiveDot(index);
-            },
-            autoPlayCurve: Curves.fastLinearToSlowEaseIn,
-            autoPlayAnimationDuration: Duration(seconds: 2),
-            viewportFraction: 1.0,
+            options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 1.0,
+              enlargeCenterPage: true,
+            ),
             items: widget.items?.map((item) {
               return Builder(
                 builder: (BuildContext context) {
